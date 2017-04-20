@@ -52,7 +52,7 @@ clojurebridge-turtle.walk=> (state)
 {:trinity {:x 0, :y 0, :angle 90, :color [106 40 126]}}
 ```
 
-- alku tila
+- alkutila
 
 ![initial state](img/initial-state.png)
 
@@ -73,17 +73,16 @@ Kun kilpikonna menee reunojen yli, tai et muutoin löydä tiettyä
 kilpikonnaa, voit tarkistaa niiden tilan `state` funktion avulla.
 Komento palauttaa absoluuttisia arvoja.
 
-[note] The `forward`/`backward` or `right`/`left` commands take a
-relative value to the current state.
+[huom]  `forward`/`backward` tai `right`/`left` komentojen arvot ovat
+riippuvaisia nykyisen tilan arvoista. Eivät absoluuttisia arvoja.
 
 - `doc`
 
-Without looking at command reference, we can check how to use each
-function by Clojure's `doc`. For examples, `(doc forward)` displays
-its usage.
+Jos haluamme tietää mitä jokkin funktio tekee, voimme käyttää Clojuren
+`doc` komentoa. Esimerkiksi `(doc forward)` näyttää forward-funktion 
+dokumentaation.
 
-
-#### 2. [easy] Basic movement - forward, backward, right and left
+#### 2. [helppo] Perus liikkeet - forward, backward, right ja left
 
 - forward
 
@@ -104,7 +103,7 @@ clojurebridge-turtle.walk=> (right 90)
 
 ![right 90](img/right90.png)
 
-- combinations of forward and right
+- yhdistelmä funktioista forward ja right
 
 ```clojure
 clojurebridge-turtle.walk=> (forward 40)
@@ -130,7 +129,7 @@ clojurebridge-turtle.walk=> (forward 80)
 ![combination](img/forwardsandrights.png)
 
 
-- combination of various commands
+- yhdistelmä erilaisista komennoista
 
 ```clojure
 clojurebridge-turtle.walk=> (init)
@@ -153,9 +152,9 @@ clojurebridge-turtle.walk=> (state)
 
 
 
-#### 3. [easy] Multiple turtles
+#### 3. [helppo] Useita kilpikonnia
 
-- add turtles
+- lisää kilpikonnia
 
 ```clojure
 clojurebridge-turtle.walk=> (init)
@@ -172,7 +171,7 @@ clojurebridge-turtle.walk=> (turtle-names)
 
 ![four turtles](img/four-turtles.png)
 
-- make turtles tilt different angles
+- muuta kilpikonnien kulmia
 
 ```clojure
 clojurebridge-turtle.walk=> (right :neo (* 1 45))
@@ -185,7 +184,7 @@ clojurebridge-turtle.walk=> (right :cypher (* 3 45))
 
 ![four directions](img/four-directions.png)
 
-- walk four turtles forward
+- kävelytä neljää kilpikonnaa eteenpäin
 
 ```clojure
 clojurebridge-turtle.walk=> (forward :trinity 40)
@@ -201,9 +200,9 @@ clojurebridge-turtle.walk=> (forward :cypher 40)
 ![four moves](img/four-forwards.png)
 
 
-#### 4. [easy] Add one more turtle and give them commands
+#### 4. [helppo] lisää vielä yksi kilpikonna ja anna sille komentoja
 
-- add another turtle named :morpheus with color
+- lisää kilpokonna nimeltä :morpheus ja anna sille väri
 
 ```clojure
 clojurebridge-turtle.walk=> (add-turtle :morpheus [21, 137, 255])
@@ -213,7 +212,7 @@ clojurebridge-turtle.walk=> (add-turtle :morpheus [21, 137, 255])
 ![fifth turtle](img/fifth-turtle.png)
 
 
-- tilt and go forward :morpheus
+- käännä ja liikuta :morpheusta eteenpäin
 
 ```clojure
 clojurebridge-turtle.walk=> (left :morpheus 45)
@@ -227,7 +226,7 @@ clojurebridge-turtle.walk=> (turtle-names)
 ![fifth's move](img/fifth-turtle-move.png)
 
 
-- walk five turtles forward by 20
+- liikuta viittä kilpikonnaa eteenpäin 50
 
 ```clojure
 clojurebridge-turtle.walk=> (forward :trinity 20)
@@ -245,7 +244,7 @@ clojurebridge-turtle.walk=> (forward :morpheus 20)
 ![forward 20 more](img/forward20plus.png)
 
 
-#### 5. [easy - intermediate] Move all five turtles - introduction to function
+#### 5. [helppo - keskivaikea] Liikuta kaikkia viittä kilpikonnaa - perehdytys funktioihin
 
 
 We've had five turtles and want to move or tilt those five.
