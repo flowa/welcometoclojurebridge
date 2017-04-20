@@ -246,17 +246,17 @@ clojurebridge-turtle.walk=> (forward :morpheus 20)
 
 #### 5. [helppo - keskivaikea] Liikuta kaikkia viittä kilpikonnaa - perehdytys funktioihin
 
+Haluamme liikuttaa ja kääntää viittä kilpikonnaamme.
+Kuinka saisimme ne menemään eteenpäin 40 askelta?
+Helpoin ratkaisu olisi kirjoittaa `(forward :name 40)`
+viisi kertaa.
 
-We've had five turtles and want to move or tilt those five.
-Let's think how we can make all five turtles go forward by 40?
-The simplest way would be to type `(forward :name 40)` five times.
+Mutta emme halua kirjoittaa lähes samaa funktiokutsua montaa kertaa.
+Voisiko tämän tehdä helpommin? Kyllä vain.
+Clojuressa tämän voi tehdä monella tavalla.
+`doseq` funkti on yksi.
 
-But wait. We are almost exhausted to type quite similar commands many times.
-Is there any handy way of doing this? Yes, there is.
-Clojure has many functions to accomplish this purpose.
-`doseq` function is one of them.
-
-- 5.1 move 5 turtles forward using `doseq` function
+- 5.1 liikuta 5 kilpikonnaa eteenpäin käyttäen `doseq` funktiota. 
 
 ```clojure
 clojurebridge-turtle.walk=> (doseq [n (turtle-names)] (forward n 40))
@@ -266,7 +266,7 @@ nil
 ![five turtles move](img/five-turtles-move.png)
 
 
-- 5.2 [bonus] using `map` function (higher order function)
+- 5.2 [bonus] `map` funktiota käyttäen (ns. higher order-funktio)
 
 ```clojure
 clojurebridge-turtle.walk=> (map #(forward % 40) (turtle-names))
