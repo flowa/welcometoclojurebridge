@@ -1,47 +1,45 @@
-# How to Walk Turtles
+# Kuinka kävelyttää kilpikonnia
 
-Here are some instructions from very basic to a little bit high level
-ones to walk turtles.
+Ohessa muutama ohje perusteista monimutkaisempiin konsepteihin koskien
+kilpikonnien liikuttamista.
 
-Walk them and draw lines by your imagination!
+Anna mielikuvituksesi lentää.
 
-#### 1. start up
+#### 1. Aloitetaan
 
-- preparation
+- valmistelut
 
-If you haven't cloned out the repository, try this on the terminal:
+Jos et ole kloonannut tätä repositoryä, aja seuraava komento terminaalissa:
 
 ```bash
-git clone https://github.com/ClojureBridge/welcometoclojurebridge
+git clone https://github.com/Flowa/welcometoclojurebridge
 cd welcometoclojurebridge
 ```
 
-- load walk.clj on Nightcode
+- lataa walk.clj Nightcodessa
 
-open the file
+Avaa tiedosto
 `welcomeclojurebridge/src/clojurebridge_turtle/walk.clj`.
-Then, click `Run with REPL`.
-It may take long. Evetually, you'll see the prompt,`user=> nil`, on the bottom REPL pane.
-Finally, click `Reload File`. You'll see a window with a small triangle on the center.
-This triangle is a turtle.
+Klikkaa `Run with REPL`.
+Tämä voi kestää hetken, mutta jonkin ajan kuluttua näät kehotteen `user=> nil` 
+REPL ikkunan pohjalla. Tämän jälkeen klikkaa `Reload File`. Näet pienen ikkunan,
+jonka keskellä on kolmio. Tämä kolmio on kilpikonna.
 
+Jahka turtles-applikaatio on käynnissä, voit evaluoida lausekkeita (koodia
+joka on sulkeiden välissä) seuraavilla tavoilla:
 
-Once the turtles app starts running, evaluate each form (code fragment
-enclosed by matching parentheses) by either one of two:
+1. kirjoita koodia editorissa, valitse/maalaa alue ja klikkaa `Reload Selection`.
+2. kirjoita koodisi REPL-ikkunaan ja paina (enter).
 
-1. type code in the editor, select the region then click `Reload Selection`.
-2. type code in the right bottom REPL and hit return(enter).
+Näillä tavoilla on se ero, että mikäli kirjoitat
+koodisi editoriin, voit tallentaa sen. Paina `Save`
+ylävalikosta mikäli haluat tehdä näin.
+Suoraan REPL:n kirjoittaminen on kätevää, mutta 
+tätä koodia ei voi tallentaa.
 
+- walk.clj:n lataaminen lein repl.ssä
 
-The difference of above two are --
-If you write code in the editor, you can save it.
-Click `Save` on the top when you want to do.
-Writing code in the REPL is handy, but you can't save it.
-
-
-- load walk.clj on lein repl
-
-startup repl, then run `require` and `ns`.
+käynnistä repl, sitten aja `require` ja `ns`.
 
 ```clojure
 user=> (require 'clojurebridge-turtle.walk)
@@ -54,27 +52,26 @@ clojurebridge-turtle.walk=> (state)
 {:trinity {:x 0, :y 0, :angle 90, :color [106 40 126]}}
 ```
 
-- initial state
+- alku tila
 
 ![initial state](img/initial-state.png)
 
 
-See [TURTLE.md](TURTLE.md) for commands that turtles understand.
+[TURTLE.md](TURTLE.md) tiedostosta löydät komentoja joita kilpikonna ymmärtää
 
 
-- `undo`, `clean`, and `home`
+- `undo`, `clean`, ja `home`
 
-When the turtle has gone unexpectedly long or short distance, we can delete the
-line one by one using `undo`.
-If the turtle should start from its initial state,
-a combination of `clean` and `home` commands make the turtle back to
-the initial state.
+Mikäli kilpikonna on kävellyt odottamattoman pitkän tai lyhyen matkan, komennon
+voi peruuttaa `undo` funktiolla.
+Mikäli kilpikonnan haluaa palauttaa alku-asemaan, se onnistuu perättäisillä
+`clean` ja `home` funktiokutsuilla.
 
-- `state`
+- `tila`
 
-When the turtle goes far away beyond the boundary, or you lost which
-one is what, you can check where they are by this command. The command
-returns absolute values.
+Kun kilpikonna menee reunojen yli, tai et muutoin löydä tiettyä 
+kilpikonnaa, voit tarkistaa niiden tilan `state` funktion avulla.
+Komento palauttaa absoluuttisia arvoja.
 
 [note] The `forward`/`backward` or `right`/`left` commands take a
 relative value to the current state.
