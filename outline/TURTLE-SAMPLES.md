@@ -307,17 +307,16 @@ clojurebridge-turtle.walk=> (map (juxt #(right % 60) #(forward % 30)) (turtle-na
 ```
 
 
-#### 6. [easy - intermediate] Write a function that adds turtles
+#### 6. [helppo - keskivaikea] kirjoita funktio, joka lisää kilpikonnia
 
-While playing around with turtles, we may mess up their movements.
-The `(init)` command makes everything clean up and back to the initial state.
-It is a good command, but again, we need to repeat `(add-turtle name)`
-command many times to get five turtles.
+Kun leikimme kilpikonnilla, saatamme vahingossa kävelyttää niitä paikkoihin, joita emme tarkoittaneet.
+`(init)` komento palauttaa kaikki konnat alkutilaansa.
+Se on hyvä komento, mutta pienenä haasteena joudumme sen jälkeen aina luomaan konnat uudelleen
+toistamalla `(add-turtle nimi)` komentoa 5 kertaa.
 
-We want something. Yes, we can define our own function for that.
-Once the function is defined, we can add five turtles by a single
-function call anytime.
-
+Voisiko asian tehdä helpommin?
+Kyllä, voimme luoda funktion juuri tähän tarkoitukseen.
+Kun funktio on valmis, voimme sitä kutsuen luoda 5 kilpikonnaa yhdellä funktiokutsulla milloin tahansa.
 
 - 6.1 define a function to add three turtles and a turtle with the name :neo
 
