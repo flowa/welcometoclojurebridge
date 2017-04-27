@@ -347,27 +347,24 @@ Nykyinen `add-four-turtles` funktio käyttää ns. kovakoodattuja nimiä (niitä
 Korjataanpa asia ja tehdään funktio, jonka avulla voimme antaa haluamamme nimet.
 Lisäksi toteutetaan uusi toiminnallisuus siten, että meidän ei tarvitse muokata alkuperäistä toteutusta.
 
-Now, we are going to write **multi-arity function**. The arity means a
-number of arguments the function takes. For example, our
-`add-four-turtle` function so far takes zero argument only. If we add
-`add-four-turtle` function which takes one argument, the function
-turns to a multi-arity function. This is because the function takes
-zero or one argument.
-
+Toteutamme funktion, joka osaa ottaa eri määrän parametrejä. (**multi-arity function**).
+Voimme määritellä samalle funktiolle eri toteutuksia sen perusteella kuinka monta parametria se ottaa.
+Hetki sitten tehty `add-four-turtles` funktio ei ottanut yhtään parametria.
+Lisätään siihen myös yhden parametrin ottava versio.
 
 ```clojure
-;; function definition
+;; funktion luominen
 (defn add-four-turtles
   ([] (add-four-turtles [:neo :oracle :cypher :morpheus]))
   ([names]
     (init)
     (dotimes [i (count names)] (add-turtle (nth names i)))))
 
-;; usage example
+;; käyttöesimerkki
 (add-four-turtles)                                 ;; uses predefined names
 (add-four-turtles [:taylor :tess :tiffany :tracy]) ;; uses given names
 
-;; check turtle names
+;; tarkasta luotujen kilpikonnien nimet
 (turtle-names)
 ```
 
