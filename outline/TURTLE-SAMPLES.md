@@ -318,35 +318,34 @@ Voisiko asian tehdä helpommin?
 Kyllä, voimme luoda funktion juuri tähän tarkoitukseen.
 Kun funktio on valmis, voimme sitä kutsuen luoda 5 kilpikonnaa yhdellä funktiokutsulla milloin tahansa.
 
-- 6.1 define a function to add three turtles and a turtle with the name :neo
+- 6.1 luo funktio neljän muun kilpikonnan lisäämiseksi
 
-Since we already have :trinity, we are going to add four turtles.
-Let's name them, :neo, :oracle, :cypher, :morpheus.
-Once all are added, we will get five turtles in total.
+Koska :trinity meillä on aina valmiina, luodaan neljä uutta kilpikonnaa.
+Annetaan niille nimiksi :neo, :oracle, :cypher ja :morpheus.
+Kun kaikki neljä on lisätty niin meillä on yhteensä viisi kilpikonnaa.
 
 ```clojure
-;; function definition
+;; Funktion luominen
 (defn add-four-turtles
   []
   (let [names [:neo :oracle :cypher :morpheus]]
     (init)
     (dotimes [i (count names)] (add-turtle (nth names i)))))
 
-;; usage of the five-turtles function
+;; funktion käyttäminen
 (add-four-turtles)
 
-;; check turtle names
+;; tarkasta luotujen kilpikonnien nimet
 (turtle-names)
 ```
 
 ![add four turtles](img/add-four-turtles.png)
 
-- 6.2 [bonus] add a parameter to `add-four-turtles` function so that
-each turtle can take specified name.
+- 6.2 [bonus] lisää `add-four-turtles` funktioon parametri, jotta jokaiselle kilpikonnalle voidaan antaa nimi erikseen.
 
-Our `add-four-turtles` function uses hard-coded names for turtles.
-Instead, let's enjoy a freedom to choose any name for them without
-rewriting the function.
+Nykyinen `add-four-turtles` funktio käyttää ns. kovakoodattuja nimiä (niitä ei voi antaa parametreina).
+Korjataanpa asia ja tehdään funktio, jonka avulla voimme antaa haluamamme nimet.
+Lisäksi toteutetaan uusi toiminnallisuus siten, että meidän ei tarvitse muokata alkuperäistä toteutusta.
 
 Now, we are going to write **multi-arity function**. The arity means a
 number of arguments the function takes. For example, our
