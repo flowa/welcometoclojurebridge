@@ -274,7 +274,7 @@ clojurebridge-turtle.walk=> (map #(forward % 40) (turtle-names))
 ```
 
 
-- 5.3 tilt and forward them by `doseq`s
+- 5.3 Käännä ja liikuta `doseq`:lla
 
 ```clojure
 clojurebridge-turtle.walk=> (doseq [n (turtle-names)] (right n 60))
@@ -286,7 +286,7 @@ nil
 ![more moves](img/five-turtles-more-move.png)
 
 
-- 5.4 [bonus] put two `doseq`s in one
+- 5.4 [bonus] Laita 2 `doseq`ia samaan 
 
 ```clojure
 clojurebridge-turtle.walk=> (doseq [n (turtle-names)]
@@ -295,7 +295,7 @@ clojurebridge-turtle.walk=> (doseq [n (turtle-names)]
 nil
 ```
 
-- 5.5 [bonus] using `map` (higher order function) and `juxt` functions
+- 5.5 [bonus] Käytä `map` (korkeamman asten funktio) ja `juxt` funktioita
 
 ```clojure
 clojurebridge-turtle.walk=> (map (juxt #(right % 60) #(forward % 30)) (turtle-names))
