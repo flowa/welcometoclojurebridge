@@ -67,7 +67,7 @@ voi peruuttaa `undo` funktiolla.
 Mikäli kilpikonnan haluaa palauttaa alku-asemaan, se onnistuu perättäisillä
 `clean` ja `home` funktiokutsuilla.
 
-- `tila`
+- `state`
 
 Kun kilpikonna menee reunojen yli, tai et muutoin löydä tiettyä 
 kilpikonnaa, voit tarkistaa niiden tilan `state` funktion avulla.
